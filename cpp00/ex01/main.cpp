@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:54:55 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 13:03:17 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:50:15 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,13 @@ int main(void)
 	while (1)
 	{
 		std::cout << "enter command : ";
-		std::cin >> command;
-		if (command == "add" || command == "ADD")
+		if(!(std::cin >> command))
+			exit(0);
+		if (command == "ADD")
 			phoneBook.addContact();
-		else if (command == "search" || command == "SEARCH")
+		else if (command == "SEARCH")
 			phoneBook.displayAllContacts();
-		else if (command == "EXIT" || command == "exit")
+		else if (command == "EXIT")
 		{
 			std::cout << "exit program" << std::endl;
 			break;

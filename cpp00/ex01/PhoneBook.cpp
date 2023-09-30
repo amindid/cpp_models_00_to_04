@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:17:36 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 13:10:06 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:49:28 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void PhoneBook::searchContact() {
 	while (1)
 	{
 		std::cout << "enter wanted contact's index : ";
-		std::cin >> index;
+		if(!(std::cin >> index))
+			exit(0);
 		if (valid_index(index, numContacts))
 		{
 			contact[std::stoi(index) - 1].displayContact();

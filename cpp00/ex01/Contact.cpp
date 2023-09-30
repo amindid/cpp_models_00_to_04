@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:25:09 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 13:13:55 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/09/30 13:30:26 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,20 @@ void Contact::replaceContact(void) {
 	newData newData;
 	std::cout << "enter contact information";
 	std::cout << std::endl << "first name : ";
-	std::cin >> newData.newFirstName;
+	if(!(std::cin >> newData.newFirstName))
+		exit(0);
 	std::cout << "last name : ";
-	std::cin >> newData.newLastName;
+	if(!(std::cin >> newData.newLastName))
+		exit(0);
 	std::cout << "nick name : ";
-	std::cin >> newData.newNickName;
+	if(!(std::cin >> newData.newNickName))
+		exit(0);
 	std::cout << "phone number : ";
-	std::cin >> newData.newPhoneNumber;
+	if(!(std::cin >> newData.newPhoneNumber))
+		exit(0);
 	std::cout << "darkest secret : ";
-	std::cin >> newData.newDarckestSecret;
+	if(!(std::cin >> newData.newDarckestSecret))
+		exit(0);
 	Contact::setData(newData.newFirstName, newData.newLastName, newData.newNickName,
 	newData.newPhoneNumber, newData.newDarckestSecret);
 	std::cout << "contact added successfully ." << std::endl;
