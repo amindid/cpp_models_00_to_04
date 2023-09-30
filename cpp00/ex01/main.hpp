@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 10:55:18 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 12:04:28 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/09/29 10:53:31 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/09/30 13:13:15 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-# include <iostream>
-# include "Contact.hpp"
+#include <iostream>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-class PhoneBook {
-	private:
-		Contact contact[8];
-		int numContacts;
-		int toBeReplaced;
+typedef struct newData {
+	std::string newFirstName;
+	std::string newLastName;
+	std::string newNickName;
+	std::string newPhoneNumber;
+	std::string newDarckestSecret;
+} newData;
 
-	public:
-		void addContact();
-		void searchContact();
-		void searchDisplay();
-		void displayAllContacts();
-		void initNumContacts();
-		void countContacts(void);
-};
+int valid_index(std::string index, int numContacts);
+void displayWord(std::string word);
 
 #endif
