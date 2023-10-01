@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:17:36 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 13:49:28 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/01 15:50:39 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,11 @@ void PhoneBook::addContact() {
 
 void PhoneBook::searchContact() {
 	std::string index;
-	while (1)
-	{
+	while (1) {
 		std::cout << "enter wanted contact's index : ";
 		if(!(std::cin >> index))
 			exit(0);
-		if (valid_index(index, numContacts))
-		{
+		if (valid_index(index, numContacts)) {
 			contact[std::stoi(index) - 1].displayContact();
 			break;
 		}
@@ -54,8 +52,7 @@ void PhoneBook::searchDisplay() {
 	
 	contactData  data;
 	
-	for (int i = 0; i < numContacts; i++)
-	{
+	for (int i = 0; i < numContacts; i++) {
 		data = contact[i].getData();
 		std::cout << i + 1 << std::setw(9);
 		std::cout << "|";
@@ -68,8 +65,7 @@ void PhoneBook::searchDisplay() {
 
 void PhoneBook::displayAllContacts(void) {
 
-	if (numContacts == 0)
-	{
+	if (numContacts == 0) {
 		std::cout << "the phone book is empty" << std::endl;
 		return;
 	}

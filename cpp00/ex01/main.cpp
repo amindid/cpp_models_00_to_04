@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:54:55 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 13:50:15 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/01 15:50:06 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 void displayWord(std::string word)
 {
-	if (word.length() > 10)
-	{
+	if (word.length() > 10) {
 		for (int i = 0; i < 9; i++)
 			std::cout << word[i];
 		std::cout << '.';
@@ -29,8 +28,7 @@ void displayWord(std::string word)
 
 int valid_index(std::string index, int numContacts)
 {
-	for(unsigned long i = 0; i < index.length() ; i++)
-	{
+	for(unsigned long i = 0; i < index.length() ; i++)	{
 		if (index[i] < '0' || index[i] > '8')
 			return (0);
 	}
@@ -45,8 +43,7 @@ int main(void)
 	std::string command;
 
 	phoneBook.initNumContacts();
-	while (1)
-	{
+	while (1) {
 		std::cout << "enter command : ";
 		if(!(std::cin >> command))
 			exit(0);
@@ -54,8 +51,7 @@ int main(void)
 			phoneBook.addContact();
 		else if (command == "SEARCH")
 			phoneBook.displayAllContacts();
-		else if (command == "EXIT")
-		{
+		else if (command == "EXIT") {
 			std::cout << "exit program" << std::endl;
 			break;
 		}
