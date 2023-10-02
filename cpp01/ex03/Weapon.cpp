@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 15:34:08 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/02 09:32:41 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/10/02 10:43:16 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/10/02 13:00:53 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main () {
+Weapon::Weapon() : type("default"){}
+
+Weapon::Weapon (std::string weaponType) {
 	
-	Zombie* zombie;
-	zombie = zombieHorde(100, "amine");
-	for (int i = 0; i < 100; i++)
-		zombie[i].announce();
-	delete[] zombie;
+	type = weaponType;
+}
+
+void Weapon::setType(std::string newType) {
+	type = newType;
+}
+
+const std::string& Weapon::getType() {
+	const std::string& typeRef = type;
+	return typeRef;
 }
