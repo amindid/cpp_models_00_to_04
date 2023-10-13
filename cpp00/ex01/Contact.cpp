@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:25:09 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/09/30 13:30:26 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:31:44 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ contactData Contact::getData (void) {
 void Contact::replaceContact(void) {
 	newData newData;
 	std::cout << "enter contact information";
-	std::cout << std::endl << "first name : ";
+	std::cout << std::endl << "* First name     : ";
 	if(!(std::cin >> newData.newFirstName))
 		exit(0);
-	std::cout << "last name : ";
+	std::cout << "* Last name      : ";
 	if(!(std::cin >> newData.newLastName))
 		exit(0);
-	std::cout << "nick name : ";
+	std::cout << "* Nick name      : ";
 	if(!(std::cin >> newData.newNickName))
 		exit(0);
-	std::cout << "phone number : ";
+	std::cout << "* Phone number   : ";
 	if(!(std::cin >> newData.newPhoneNumber))
 		exit(0);
-	std::cout << "darkest secret : ";
+	std::cout << "* Darkest secret : ";
 	if(!(std::cin >> newData.newDarckestSecret))
 		exit(0);
 	Contact::setData(newData.newFirstName, newData.newLastName, newData.newNickName,
@@ -53,9 +53,9 @@ void Contact::displayContact(void) {
 	contactData data;
 
 	data = Contact::getData();
-	std::cout << "first name : " << data.firstName << std::endl;
-	std::cout << "last name : " << data.lastName << std::endl;
-	std::cout << "nick name : " << data.nickName << std::endl;
-	std::cout << "phone number : " << data.phoneNumber << std::endl;
-	std::cout << "darkest secret : " << data.darkestSecret << std::endl;
+	std::cout << "* First name     : " << data.firstName << std::endl;
+	std::cout << "* Last name      : " << data.lastName << std::endl;
+	std::cout << "* Nick name      : " << data.nickName << std::endl;
+	std::cout << "* Phone number   : " << data.phoneNumber << std::endl;
+	std::cout << "* Darkest secret : " << data.darkestSecret << std::endl;
 }

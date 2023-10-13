@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:17:36 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/01 15:50:39 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:33:36 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,21 @@ void PhoneBook::searchContact() {
 		if(!(std::cin >> index))
 			exit(0);
 		if (valid_index(index, numContacts)) {
-			contact[std::stoi(index) - 1].displayContact();
+			contact[std::atoi(index.c_str()) - 1].displayContact();
 			break;
 		}
 		else
-			std::cout << "invalid index" << std::endl;	
+			std::cout << "🚨 invalid index" << std::endl;	
 	}
 }
 
 void PhoneBook::searchDisplay() {
 	
 	contactData  data;
+	
+	std::cout << "-------------------------------------------\n";
+	std::cout << "index    |first name|last name |nick name |\n";
+	std::cout << "-------------------------------------------\n";
 	
 	for (int i = 0; i < numContacts; i++) {
 		data = contact[i].getData();
@@ -60,13 +64,14 @@ void PhoneBook::searchDisplay() {
 		displayWord(data.lastName);
 		displayWord(data.nickName);
 		std::cout << std::endl;
+		std::cout << "-------------------------------------------\n";
 	}
 }
 
 void PhoneBook::displayAllContacts(void) {
 
 	if (numContacts == 0) {
-		std::cout << "the phone book is empty" << std::endl;
+		std::cout << "🛑 the phone book is empty" << std::endl;
 		return;
 	}
 	searchDisplay();

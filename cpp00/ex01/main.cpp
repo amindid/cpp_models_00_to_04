@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:54:55 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/01 15:50:06 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:28:51 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int valid_index(std::string index, int numContacts)
 		if (index[i] < '0' || index[i] > '8')
 			return (0);
 	}
-	if (std::stoi(index) <= 0 || std::stoi(index) > numContacts)
+	if (std::atoi(index.c_str()) <= 0 || std::atoi(index.c_str()) > numContacts)
 		return (0);
 	return (1);
 }
@@ -56,7 +56,7 @@ int main(void)
 			break;
 		}
 		else
-		std::cout << "invalid input" << std::endl;
+		std::cout << "🚨 invalid input" << std::endl;
 	}
 	
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:01:12 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/09 12:46:40 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/13 10:45:10 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,16 @@ class Fixed {
 	public:
 		Fixed();
 		Fixed(const Fixed& copy);
+		Fixed(const int intValue);
+		Fixed(const float floatValue);
 		Fixed &operator=(const Fixed &copy);
 		~Fixed();
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt(void) const;
+
 };
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

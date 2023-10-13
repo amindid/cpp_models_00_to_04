@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 15:32:50 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/01 18:48:29 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/11 18:07:21 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ std::string Zombie::getName(void) {
 void Zombie::announce(void) {
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
+
 Zombie::~Zombie()
 {
 	std::cout << name << std::endl;
