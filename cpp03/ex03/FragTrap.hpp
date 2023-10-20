@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 11:01:22 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/20 10:13:44 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/10/19 13:03:31 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/10/19 15:59:40 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-#include <iostream>
-#include "Weapon.hpp"
+#include "ClapTrap.hpp"
 
-class HumanB {
-	private:
-		std::string name;
-		Weapon* humanBweapon;
-	public:
-		HumanB(std::string newName);
-		~HumanB();
-		void setWeapon(Weapon& weapon);
-		void attack(void);
+class FragTrap
+	:public virtual ClapTrap {
+		public:
+			FragTrap();
+			FragTrap(FragTrap const &copy);
+			FragTrap(std::string);
+			FragTrap &operator=(const FragTrap &copy);
+			~FragTrap();
+
+			void attack(const std::string& target);
+			void highFivesGuys(void);
+			
 };
 
 #endif

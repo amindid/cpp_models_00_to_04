@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 11:01:22 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/20 10:13:44 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/10/19 11:48:10 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/10/19 16:00:00 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
-#include "Weapon.hpp"
+#include "ClapTrap.hpp"
 
-class HumanB {
-	private:
-		std::string name;
-		Weapon* humanBweapon;
-	public:
-		HumanB(std::string newName);
-		~HumanB();
-		void setWeapon(Weapon& weapon);
-		void attack(void);
+class ScavTrap 
+	:public virtual ClapTrap {
+		public:
+			ScavTrap();
+			ScavTrap(ScavTrap const &copy);
+			ScavTrap(std::string);
+			ScavTrap &operator=(const ScavTrap &copy);
+			~ScavTrap();
+
+			void attack(const std::string& target);
+			void guardGate(void);
 };
 
 #endif
