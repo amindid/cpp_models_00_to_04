@@ -6,28 +6,30 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:18:44 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/20 19:47:23 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:58:45 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() :Animal(){
-	this->dogBrain = new Brain();
-	this->type = "Dog";
 	std::cout << "Dog default constructor called." << std::endl;
+	this->type = "Dog";
+	this->dogBrain = new Brain();
 }
 
 Dog::Dog (const Dog &dog) {
-	this->dogBrain = new Brain();
-	this->type = "Dog";
 	std::cout << "Dog copy constructor called." << std::endl;
+	this->dogBrain = new Brain();
 	*this = dog;
 }
 
 Dog &Dog::operator=(const Dog &dog) {
 	if (this != &dog)
+	{
 		this->type = dog.type;
+		*this->dogBrain = *dog.dogBrain;
+	}
 	return *this;
 }
 

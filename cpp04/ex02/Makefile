@@ -6,13 +6,13 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/10/21 08:27:44 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/10/27 17:05:31 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS = ${SRCS:.cpp=.o}

@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:18:44 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/20 16:29:37 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:33:56 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Dog::Dog() :Animal(){
 }
 
 Dog::Dog (const Dog &dog) {
-	this->type = "Dog";
 	std::cout << "Dog copy constructor called." << std::endl;
 	*this = dog;
 }

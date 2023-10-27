@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:48:31 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/20 16:03:06 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:33:36 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Cat::Cat() : Animal(){
 }
 
 Cat::Cat (const Cat &cat) {
-	this->type = "Cat";
 	std::cout << "Cat copy constructor called." << std::endl;
 	*this = cat;
 }

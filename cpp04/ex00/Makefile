@@ -6,13 +6,13 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/10/20 16:28:06 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/10/27 16:34:33 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 OBJS = ${SRCS:.cpp=.o}
@@ -23,7 +23,7 @@ NAME = Animals
 all : ${NAME}
 
 ${NAME} : ${OBJS}
-		${CC} ${CFLAGS} ${SRCS} -o $@
+		${CC} ${CFLAGS} ${OBJS} -o $@
 
 clean :
 		rm -f ${OBJS}
