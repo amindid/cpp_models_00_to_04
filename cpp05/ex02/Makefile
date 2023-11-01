@@ -6,7 +6,7 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/10/31 18:11:38 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/11/01 17:40:02 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,5 +30,6 @@ clean :
 
 fclean : clean
 		rm -f ${NAME}
+		rm -f *_shrubbery
 
 re : fclean all

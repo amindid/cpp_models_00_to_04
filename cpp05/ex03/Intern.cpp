@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:11:37 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/01 13:14:47 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/11/01 17:36:15 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,24 @@ Intern& Intern::operator=(const Intern& intern) {
 }
 
 AForm * Intern::makeForm(std::string formName, std::string formTarget) {
-	AForm *forms[3] = {new ShrubberyCreationForm(formTarget), new RobotomyRequestForm(formTarget), new PresidentialPardonForm(formTarget)};
+	AForm *(Intern::*forms[3]) (std::string) = {&Intern::makeShrubberyCreation, &Intern::makeRobotomyRequest, &Intern::makePresidentialPardon};
 	std::string choices[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	for (int i = 0; i < 3; i++) {
 		if (choices[i] == formName) {
-			for (int j = i + 1; j < 3; j++)
-				delete forms[j];
 			std::cout << "Intern creates " << formName << std::endl;
-			return forms[i];
+			return ((this->*forms[i])(formTarget));
 		}
-		delete forms[i];
 	}
 	return NULL;
+}
+
+AForm * Intern::makeShrubberyCreation(std::string formTarget) {
+	return new ShrubberyCreationForm(formTarget);
+}
+
+AForm * Intern::makeRobotomyRequest(std::string formTarget) {
+	return new RobotomyRequestForm(formTarget);
+}
+AForm * Intern::makePresidentialPardon(std::string formTarget) {
+	return new PresidentialPardonForm(formTarget);
 }
