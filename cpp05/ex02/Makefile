@@ -6,24 +6,24 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/10/21 19:42:54 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/10/31 18:11:38 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
+ 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = FragTrap
+NAME = Bureaucrat
 
 		
 all : ${NAME}
 
 ${NAME} : ${OBJS}
-		${CC} ${CFLAGS} ${SRCS} -o $@
+		${CC} ${CFLAGS} ${OBJS} -o $@
 
 clean :
 		rm -f ${OBJS}
