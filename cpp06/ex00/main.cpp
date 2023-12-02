@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:32:20 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:03 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/11/04 12:20:18 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/11/10 12:00:20 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "ScalarConverter.hpp"
+#include <cmath>
 
-#include <iostream>
-
-class Animal {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		virtual ~Animal();
-		Animal &operator=(const Animal &animal);
-		
-		// virtual void makeSound(void) const;
-		std::string getType(void) const;
-};
-
-#endif
+int main(void) {
+	std::string input;
+	
+	while (true) {
+		std::cout << "inter value : ";
+		if (!(std::getline(std::cin ,input)))
+			break;
+		if (input.empty())
+			continue;
+		ScalarConverter::convert(input);
+	}
+	return 0;
+}

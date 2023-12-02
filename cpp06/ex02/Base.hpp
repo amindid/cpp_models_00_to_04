@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:32:20 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:03 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/11/11 11:18:38 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/11/11 15:21:20 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
 
-#include <iostream>
-
-class Animal {
-	protected:
-		std::string type;
+class Base {
 	public:
-		Animal();
-		Animal(const Animal &animal);
-		virtual ~Animal();
-		Animal &operator=(const Animal &animal);
-		
-		// virtual void makeSound(void) const;
-		std::string getType(void) const;
+		virtual ~Base(){};
 };
 
 #endif

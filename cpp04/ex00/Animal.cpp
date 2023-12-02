@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 11:36:07 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/10/20 15:54:37 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/11/02 12:55:55 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ Animal &Animal::operator=(const Animal &animal) {
 	return *this;
 }
 
-void Animal::makeSound(void) const{
-	std::cout << "Animal sound AHHOOOOOO" << std::endl;
-}
+// void Animal::makeSound(void) const{
+// 	std::cout << "Animal sound AHHOOOOOO" << std::endl;
+// }
 
 std::string Animal::getType(void) const{
 	return this->type;

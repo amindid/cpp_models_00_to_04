@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:32:20 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:03 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/11/10 18:13:01 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/11/11 11:09:29 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "Serializer.hpp"
+#include "data.hpp"
 
-#include <iostream>
+int main(void) {
+	Data data;
 
-class Animal {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		virtual ~Animal();
-		Animal &operator=(const Animal &animal);
-		
-		// virtual void makeSound(void) const;
-		std::string getType(void) const;
-};
+	data.name = "amine";
+	
+	uintptr_t ptr = Serializer::serializer(&data);
+	Data *deserializedData = Serializer::deserialize(ptr);
 
-#endif
+	if (deserializedData == &data) {
+		std::cout << deserializedData->name << std::endl;
+		std::cout << "successful." << std::endl;
+	}
+	else
+		std::cout << "failed." << std::endl;
+	return 0;
+}

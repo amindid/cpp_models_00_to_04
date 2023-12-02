@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:32:20 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:03 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/11/12 12:49:48 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/11/13 17:34:50 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
 #include <iostream>
 
-class Animal {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		virtual ~Animal();
-		Animal &operator=(const Animal &animal);
-		
-		// virtual void makeSound(void) const;
-		std::string getType(void) const;
-};
+template <typename T> void iter(T *arr, int arrLen, void (*f)(T element)) {
+	for (int i = 0; i < arrLen; i++) {
+		f(arr[i]);
+	}
+}
 
 #endif

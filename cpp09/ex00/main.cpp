@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:32:20 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:03 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/11/25 21:48:44 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/11/25 23:05:34 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#include "BitcoinExchange.hpp"
 
-#include <iostream>
-
-class Animal {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		virtual ~Animal();
-		Animal &operator=(const Animal &animal);
-		
-		// virtual void makeSound(void) const;
-		std::string getType(void) const;
-};
-
-#endif
+int main(int ac, char **av) {
+	if (ac != 2) {
+		std::cout << "ERROR: missing file name in arguments." << std::endl;
+		exit (1);
+	}
+	BitcoinExchange bitcoin;
+	try {
+		bitcoin.calculate(av[1]);
+	} catch (std::exception &e) {
+		std::cout << "ERROR : " << e.what() << std::endl;
+	}
+	return 0;
+}

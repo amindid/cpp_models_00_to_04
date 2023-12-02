@@ -6,18 +6,18 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/11/02 12:55:45 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/11/12 12:44:42 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
+ 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-# CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp 
 OBJS = ${SRCS:.cpp=.o}
 
-NAME = Animals
+NAME = Iter
 
 		
 all : ${NAME}

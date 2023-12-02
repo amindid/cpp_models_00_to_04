@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:32:20 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/02 12:55:03 by aouchaad         ###   ########.fr       */
+/*   Created: 2023/11/13 17:49:09 by aouchaad          #+#    #+#             */
+/*   Updated: 2023/11/15 22:49:23 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#pragma once
 
 #include <iostream>
+#include <exception>
 
-class Animal {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(const Animal &animal);
-		virtual ~Animal();
-		Animal &operator=(const Animal &animal);
+template <typename T>
+class Array {
+	private:
+		T *arr;
+		unsigned int lenth;
+	public :
+		Array();
+		Array(unsigned int n);
+		Array(const Array &copy);
+		Array &operator=(const Array &copy);
+		~Array();
+
+		unsigned int size(void) const;
+		T &operator[](unsigned int index);
 		
-		// virtual void makeSound(void) const;
-		std::string getType(void) const;
 };
 
-#endif
+#include "Array.tpp"
