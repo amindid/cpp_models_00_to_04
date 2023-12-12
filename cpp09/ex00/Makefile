@@ -6,7 +6,7 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/11/22 12:45:26 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/12/12 11:08:11 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ NAME = btc
 all : ${NAME}
 
 ${NAME} : ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o $@
+		${CC} ${CXXFLAGS} ${OBJS} -o $@
 
 clean :
 		rm -f ${OBJS}

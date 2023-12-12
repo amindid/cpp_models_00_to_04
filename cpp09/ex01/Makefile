@@ -6,7 +6,7 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/11/26 12:25:02 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/12/12 11:08:18 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ NAME = RPN
 all : ${NAME}
 
 ${NAME} : ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o $@
+		${CC} ${CXXFLAGS} ${OBJS} -o $@
 
 clean :
 		rm -f ${OBJS}

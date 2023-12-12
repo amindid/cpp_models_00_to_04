@@ -6,7 +6,7 @@
 #    By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/01 15:27:46 by aouchaad          #+#    #+#              #
-#    Updated: 2023/11/29 13:03:54 by aouchaad         ###   ########.fr        #
+#    Updated: 2023/12/12 11:03:44 by aouchaad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ NAME = PmergeMe
 
 		
 all : ${NAME}
-
-${NAME} : ${OBJS}
-		${CC} ${CFLAGS} ${OBJS} -o $@
+	
+${NAME} : ${OBJS} PmergeMe.hpp
+		${CC} ${CXXFLAGS} ${OBJS} -o $@
 
 clean :
 		rm -f ${OBJS}

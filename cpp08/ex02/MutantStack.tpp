@@ -6,7 +6,7 @@
 /*   By: aouchaad <aouchaad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 12:05:44 by aouchaad          #+#    #+#             */
-/*   Updated: 2023/11/22 12:42:07 by aouchaad         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:58:58 by aouchaad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack &copy) {
 	while (!(this->Stack.empty()))
 		this->Stack.pop();
 	this->Stack = copy.Stack;
+	return *this;
 }
 
 template <typename T>
@@ -36,5 +37,5 @@ typename MutantStack<T>::iterator MutantStack<T>::begin(void) {
 }
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end(void) {
-	return this->c.;
+	return this->c.end();
 }
